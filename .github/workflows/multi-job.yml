@@ -11,7 +11,7 @@ jobs:
         run: |
           echo Hello World! > hello-world.txt
       - name: Upload hello world file
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: hello-world
           path: hello-world.txt
@@ -22,7 +22,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Download hello world file
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: hello-world
       - shell: bash
@@ -30,7 +30,7 @@ jobs:
           value=`cat hello-world/hello-world.txt`
           echo $value > hello-world/hello-world.txt
       - name: Upload hello world to artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: hello-world
           path: hello-world.txt
