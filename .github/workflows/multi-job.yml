@@ -29,7 +29,7 @@ jobs:
         run: |
           type hello-world.txt
           echo "greetings concluded" > file.txt
-          type hello-world.txt file.txt > result.txt
+          type hello-world.txt, file.txt > result.txt
       - name: Upload hello world to artifact
         uses: actions/upload-artifact@v2
         with:
