@@ -27,8 +27,8 @@ jobs:
           name: hello-world
       - shell: bash
         run: |
-          value=`cat hello-world/hello-world.txt`
-          echo $value > hello-world/hello-world.txt
+          value=`cat hello-world.txt`
+          echo $value > hello-world.txt
       - name: Upload hello world to artifact
         uses: actions/upload-artifact@v2
         with:
