@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
-        run: |
-          echo Hello World! > hello-world.txt
+        run: echo Hello World! > hello-world.txt
+        
       - name: Upload hello world file
         uses: actions/upload-artifact@v2
         with:
@@ -25,12 +25,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: hello-world
-      - shell: bash
+      - shell: pwsh
         run: |
-          value=`cat hello-world.txt`
-          echo $value > hello-world.txt
+          type hello-world.txt
+          echo "greetings concluded" > file.txt
+          type hello-world.txt file.txt > result.txt
       - name: Upload hello world to artifact
         uses: actions/upload-artifact@v2
         with:
-          name: hello-world
-          path: hello-world.txt
+          name: result
+          path: result.txt
