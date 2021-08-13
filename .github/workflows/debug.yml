@@ -12,6 +12,4 @@ jobs:
     - uses: hmarr/debug-action@v2
     - run: |
         echo ${{ github.event.workflow_run }}
-        echo ${{ github.event.workflow }}
-        echo ${{ github.event.workflow.id }}
         echo ${{ github.event.workflow_run.run_number }}
