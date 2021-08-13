@@ -1,0 +1,17 @@
+name: Debug
+on:
+  workflow_run:
+    workflows: ["BuildNumber"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hmarr/debug-action@v2
+    - run: |
+        echo ${{ github.event.workflow_run }}
+        echo ${{ github.event.workflow }}
+        echo ${{ github.event.workflow.id }}
+        echo ${{ github.event.workflow.run_number }}
