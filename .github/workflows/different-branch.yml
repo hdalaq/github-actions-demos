@@ -1,0 +1,14 @@
+name: DifferentBranch
+on:
+  workflow_run:
+    workflows: ["BuildNumber"]
+    types:
+      - requested
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hmarr/debug-action@v2
+    - run: |
+        echo ${{ github.event.workflow_run.run_number }}
