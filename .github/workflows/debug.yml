@@ -14,4 +14,4 @@ jobs:
         echo ${{ github.event.workflow_run }}
         echo ${{ github.event.workflow }}
         echo ${{ github.event.workflow.id }}
-        echo ${{ github.event.workflow.run_number }}
+        echo ${{ github.event.workflow_run.run_number }}
